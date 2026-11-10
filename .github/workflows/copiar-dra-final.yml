@@ -1,0 +1,31 @@
+name: Copiar dra-final
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/copiar-dra-final.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+jobs:
+  copiar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Clonar dra-final e copiar tudo
+        run: |
+          git clone --depth 1 https://github.com/CarlloPicollo/dra-final.git /tmp/src
+          rsync -a --exclude .git /tmp/src/ ./
+          touch .nojekyll
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Copia completa do dra-final com imagens" || echo nada
+          git push
+          ls -la images
+      - name: Ativar GitHub Pages
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api -X POST repos/${{ github.repository }}/pages -f 'source[branch]=main' -f 'source[path]=/' || gh api repos/${{ github.repository }}/pages
