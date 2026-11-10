@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perguntas frequentes | Dra. Grassiele Magalhães</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header"><nav class="nav"><a href="index.html" class="logo"><img src="images/logo.png" alt="Logo"> Dra. Grassiele Magalhães</a><button class="nav-toggle">☰</button><ul class="nav-menu"><li><a href="index.html">Início</a></li><li><a href="sobre.html">Sobre</a></li><li><a href="servicos.html">Serviços</a></li><li><a href="resultados.html">Resultados</a></li><li><a href="perguntas.html" class="active">Perguntas frequentes</a></li><li><a href="contato.html">Contato</a></li></ul></nav></header>
+  <main><section class="section"><div class="container" style="max-width:900px;"><h1 class="section-title">Perguntas frequentes</h1><p style="text-align:center;color:var(--muted);margin-bottom:2rem;">Não achou a sua? Pergunte direto pelo WhatsApp.</p><div class="faq"><div class="faq-item"><button class="faq-q">O consultório funciona 24 horas?</button><div class="faq-a"><p>Não. O atendimento é de segunda a sexta, das 8h às 18h, com horário marcado.</p></div></div><div class="faq-item"><button class="faq-q">Quais tipos de procedimentos são realizados?</button><div class="faq-a"><p>Clareamento, restaurações, próteses, implantes, tratamento de canal, limpeza, odontopediatria e urgência.</p></div></div><div class="faq-item"><button class="faq-q">Como agendar uma consulta?</button><div class="faq-a"><p>Pelo WhatsApp (67) 99186-1012 ou pelo e-mail contato@grassielemagalhaes.com.</p></div></div><div class="faq-item"><button class="faq-q">Atende convênio ou plano de saúde?</button><div class="faq-a"><p>O atendimento é particular. Entre em contato para mais informações.</p></div></div><div class="faq-item"><button class="faq-q">Onde está localizado o consultório?</button><div class="faq-a"><p>Rua Teldo Kasper, 109 · Chácara Cachoeira · Campo Grande - MS.</p></div></div><div class="faq-item"><button class="faq-q">Quanto custa uma consulta?</button><div class="faq-a"><p>O valor varia conforme o procedimento. Entre em contato pelo WhatsApp para orçamento.</p></div></div><div class="faq-item"><button class="faq-q">O que fazer em caso de emergência?</button><div class="faq-a"><p>Entre em contato pelo WhatsApp. Avaliamos o caso e orientamos o melhor horário.</p></div></div></div><div style="text-align:center;margin-top:2rem;"><a href="https://wa.me/5567991861012" class="btn" target="_blank">Tirar uma dúvida</a></div></div></section></main>
+  <footer class="footer"><p>Dra. Grassiele Magalhães · contato@grassielemagalhaes.com</p></footer>
+  <style>
+    .faq{max-width:700px;margin:0 auto;}
+    .faq-item{border-bottom:1px solid var(--line);}
+    .faq-q{width:100%;text-align:left;padding:1.25rem 0;background:none;border:none;font-size:1.05rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;}
+    .faq-q::after{content:'+';font-size:1.4rem;color:var(--teal);}
+    .faq-item.open .faq-q::after{content:'×';}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .3s;}
+    .faq-item.open .faq-a{max-height:200px;padding-bottom:1rem;}
+    .faq-a p{color:var(--muted);line-height:1.6;}
+  </style>
+  <script>
+    document.querySelectorAll('.faq-q').forEach(btn=>{
+      btn.addEventListener('click',()=>btn.parentElement.classList.toggle('open'));
+    });
+  </script>
+  <script src="js/script.js"></script>
+</body></html>
